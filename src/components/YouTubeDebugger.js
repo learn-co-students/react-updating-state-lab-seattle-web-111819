@@ -1,7 +1,7 @@
 // Code YouTubeDebugger Component Here
 import React, { Component } from 'react'
 
-class YouTubeDebugger extends Component {
+export default class YouTubeDebugger extends Component {
 
     constructor() {
         super()
@@ -32,7 +32,7 @@ class YouTubeDebugger extends Component {
             settings: {
                 ...this.state.settings,
                 video: {
-                    ...this.state.settings.video,
+                    ...this.state.settings.video, // not needed?
                     resolution: '720p'
                 }
             }
@@ -45,14 +45,16 @@ class YouTubeDebugger extends Component {
             <div>
             {/* button with the class 'bitrate'. */}
             {/* Clicking this button changes the settings.bitrate state property to 12. */}
-            <button className="bitrate" onClick={this.handleBitrate}>Change Bitrate</button>
+            <button className="bitrate" onClick={this.handleBitrate}>
+            Change Bitrate
+            </button>
 
             {/* button with the class 'resolution'.  */}
             {/* Clicking this button changes the settings.video.resolution state property to '720p'. */}
-            <button className="resolution" onClick={this.handleResolution}>Change Resolution</button>
+            <button className="resolution" onClick={this.handleResolution}>
+            Change Resolution
+            </button>
             </div>
         )
     }
 }
-
-export default YouTubeDebugger
